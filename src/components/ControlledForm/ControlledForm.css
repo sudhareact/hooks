@@ -1,0 +1,10 @@
+.ControlledFormWrapper{
+    width:400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    padding: 40px;
+    box-sizing: border-box;
+    gap: 20px;
+}
