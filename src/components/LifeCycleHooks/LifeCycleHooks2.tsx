@@ -1,35 +1,30 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-const LifeCycleHooks = () => {
+const LifeCycleHooks2 = () => {
 
     console.log("LifeCycleHooks Render")
 
     const [claps, setClaps] = useState<number>(0);
     const [like, setLike] = useState<boolean>(false);
 
-    //ngOnit
+    //At the start it will execute
     useEffect(() => {
         console.log("ngOnit 1")
         const timerId = setInterval(() => console.log("timer running"), 1000);
-        //ngOnDestroy
+
         return () => {
             console.log("ngOnDestroy triggered");
             clearInterval(timerId);
         }
     }, [])
-
-    const mouseMoveCallback = useCallback(() => {
-        console.log("mouse move");
-    }, [])
-
+  
     //ngOnit
     useEffect(() => {
         console.log("ngOnit 2")
-        window.addEventListener("mousemove", mouseMoveCallback)
         return () => {
-            window.removeEventListener("mousemove", mouseMoveCallback)
+            console.log("ngOnDestroy triggered 2");
         }
-    }, [mouseMoveCallback])
+    }, [])
 
     //ngUpdate
     useEffect(() => {
@@ -59,22 +54,13 @@ const LifeCycleHooks = () => {
         setLike((prevLike) => !prevLike)
     }, []);
 
-    const likeDiv = useMemo(() => {
-        const likeMessage =  like ? "unlike" : "like"
-        return <div>likes : {likeMessage}</div>
-    }, [like])
-
     return <div>
         <div>claps : {claps}</div>
-        {likeDiv}
+        <div>likes : {like ? "unlike" : "like"}</div>
         <button onClick={onClapClicked}>Clap</button>
         <button onClick={toggleLike}>Toggle Like</button>
     </div>
 }
 
-export default LifeCycleHooks;
+export default LifeCycleHooks2;
 
-//10 seconds
-//Default use rstate is active and Watch mouse and Start Timer also
-//If There is no mouse move after 10 seconds , set user state idle
-//When the state is idle , remove unwatch mouse

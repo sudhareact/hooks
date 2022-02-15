@@ -1,0 +1,23 @@
+.Row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.Name {
+    background-color: red;
+    color: black;
+    width: 100%;
+    height: 75px;
+}
+
+.Standard {
+    background-color: green;
+    color: black;
+    width: 100%;
+    height: 75px;
+}
+
+.AllStudents {
+    display: flex;
+    flex-direction: column;
+}
