@@ -9,6 +9,8 @@ import StudentsMemo from './components/Memo/Memo';
 import MemoMoviesExample from './components/Memo2/MemoMoviesExample';
 import MemoExample from './components/Memo2/MemoExample';
 import MovieUIComposer from './components/Context/MovieUIComposer';
+import SimpleContext from './components/SimpleContext/SimpleContext';
+import Tv from './components/Reducer/Reducer';
 
 function App() {
 
@@ -29,7 +31,9 @@ function App() {
       <StudentsMemo></StudentsMemo> */}
       {/* <MemoExample></MemoExample> */}
       {/* <MemoMoviesExample></MemoMoviesExample> */}
-      <MovieUIComposer></MovieUIComposer>
+      {/* <MovieUIComposer></MovieUIComposer> */}
+      {/* <SimpleContext></SimpleContext> */}
+      <Tv></Tv>
     </div>
   );
 }
